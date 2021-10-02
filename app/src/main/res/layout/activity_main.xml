@@ -1,11 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+• android:stretchColumns: indicará las columnas que pueden expandir para absorber el
+espacio libre dejado por las demás columnas a la derecha de la pantalla, admite *, todas las columnas
+o puedes poner las columnas que se comportarán así como "0,2,3", las columnas empiezan en CERO
+-->
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tabla0"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:stretchColumns="*">
+    <!--
+    • android:shrinkColumns. Indicará las columnas que se pueden contraer para dejar espacio
+    al resto de columnas que se puedan salir por la derecha de la pantalla.
+    s
+    • android:collapseColumns. Indicará las columnas de la tabla que se quieren ocultar
+    completamente
+    -->
 
-    
+    <!--
+    crea una nueva fila en la tabla, el número de \
+    columnas será en referencia a la fila que tenga \
+    el mayor numero de columnas.
+    -->
+
+    <!-- es bueno ponerle un id siempre a las views y layouts-->
+    <TableRow
+        android:id="@+id/fila0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+       <Button
+           android:id="@+id/boton0"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="columna0"
+           />
+
+        <Button
+            android:id="@+id/boton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="columna1"
+            />
+
+        <Button
+            android:id="@+id/boton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="columna2"
+            />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/fila1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--
+       • android:layout_span="3" : significa el espacio de las columans que va a ocupar
+       esa columna es decir si tenemos dos filas y en la primer 3 columnas y en la segunda
+       queremos que la primera columna ocupe las 3 posiciones se hace con esta propiedad
+       -->
+        <Button
+            android:id="@+id/boton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="3"
+            android:text="columna0"
+            />
+
+    </TableRow>
 
 </TableLayout>
